@@ -1,0 +1,90 @@
+\section{Preliminaries}
+\label{sec:prelim}
+\subsection{Definition of an Algebra}
+\begin{definition}
+    An \textbf{algebra} is a vector space $A$ with a multiplication operator
+    $A \times A \to A$ and $(x,y) \mapsto xy$ such that
+    \begin{enumerate}
+        \item $(xy)z = z(yz)$ for all $x,y,z \in A$
+        \item $x(y+z) = xy + xz$ and $(x+y)z = xz+yz$ for all $x,y,z \in A$
+        \item $c(xy) = (cx)y = x(cy)$ for all $c \in \mathbb{C}$ and $x,y \in A$
+    \end{enumerate}
+\end{definition}
+We say $A$ is \textbf{unital} if it has an identity element $e \in A$ such that
+$ex = xe = x$ for all $x \in A$. Further, $A$ is \textbf{abelian} or (\textbf{commutative})
+if $xy=yx$ for all $x,y \in A$.
+
+\subsection{Definition of a Banach Algebra}
+\begin{definition}
+    A \textbf{Banach algebra} is an algebra $A$ which is norm complete, thus a Banach
+    space, such that
+    \begin{equation*}
+        \| xy \| \le \|x\| \|y\| \quad \forall x,y \in A
+    \end{equation*}
+\end{definition}
+If $A$ is unital then we assume $\| e \| = 1$. Further, we usualy write $1:=e$ for
+the unital element. We won't work much with Banach algebras exclusively but rather
+to motivate the definition of a C*-algebra. However, it is important to note an example.
+\begin{example}
+    Let $f,g \in L^1(\mathbb{R})$ and define the multiplication operation as the convolution
+    $f * g \in L^1 (\mathbb{R})$ by
+    \begin{equation*}
+        (f * g)(t) := \int_{\mathbb{R}} f(t-s)g(s)ds
+    \end{equation*}
+    Under the convolution, $L^1 (\mathbb{R})$ is a commutative Banach algebra but
+    it is not unital.
+\end{example}
+
+
+
+\subsection{Definition of a C*-Algebra}
+\begin{definition}
+A \textbf{C*-algebra} is a Banach algebra \( A \) equipped with an involution \( a \mapsto a^* \) satisfying the C*-identity:
+\[
+\|a^*a\| = \|a\|^2 \quad \text{for all } a \in A.
+\]
+\end{definition}
+Note that the involution operator is unique. For some concrete examples and nonexamples, consider a compact Hausdorff space $X$.
+We define $C(X)$ to be all continuous functions $f: X \to \mathbb{C}$. It is crucial
+that $X$ be compact for our purposes. The involution on $C(X)$ is defined as complex
+conjugation denoted $f^* = \overline{f}$. Lets look at some simple examples.
+\begin{example}
+    Let $X = [0,1]$, then $C(X)$ is a C*-algebra.
+\end{example}
+
+\begin{example}
+    Let $X = S^1$, the unit circle. Then $C(X)$ is a C*-algebra.
+\end{example}
+
+\begin{example}
+    Let $X = \{ 0, 1, 2, 3\}$. Then $C(X)$ is a C*-algebra.
+\end{example}
+
+\begin{example}
+    Let $X = \mathbb{R}$. Then $C(X)$ is not a C*-algebra because $X$ is not compact.
+\end{example}
+
+These are very basic concrete examples of subsets of $\mathbb{C}$, but we also want
+to consider some much more important examples for our purposes. One that shows up a
+lot in physics is the C*-algebra of complex-valued $n \times n$ matrices, denoted $M_n(\mathbb{C})$.
+Another C*-algebra of particular interest is the bounded linear operators from a Hilbert
+space onto itself, we denote this $B(H)$ for a Hilbert space $H$. One may also explore
+the C*-algebras of continuous compactly supported functions and continuous functions
+vanishing at infinity. Should these arise in any examples we will give a rigorous
+definition.
+
+\par
+
+In summary, and with some abuse of notation, we can see how much more structure
+C*-algebras have as compared to typical vector spaces
+\begin{equation*}
+    \text{vector space} \supseteq \text{algebra} \supseteq \text{Banach algebra} \supseteq \text{C*-algebra}
+\end{equation*}
+
+\subsection{States on C*-Algebras}
+\begin{definition}
+A \textbf{state} on a C*-algebra \( A \) is a linear functional \( \phi: A \to \mathbb{C} \) such that:
+\[
+\phi(a^*a) \geq 0 \quad \text{for all } a \in A, \quad \text{and } \phi(1) = 1.
+\]
+\end{definition}
