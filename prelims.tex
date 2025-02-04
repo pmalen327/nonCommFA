@@ -11,7 +11,8 @@
     \end{enumerate}
 \end{definition}
 We say $A$ is \textbf{unital} if it has an identity element $e \in A$ such that
-$ex = xe = x$ for all $x \in A$. Further, $A$ is \textbf{abelian} or (\textbf{commutative})
+$ex = xe = x$ for all $x \in A$. We will assume every algebra is unital unless stated
+otherwise. Further, $A$ is \textbf{abelian} or (\textbf{commutative})
 if $xy=yx$ for all $x,y \in A$.
 
 \subsection{Definition of a Banach Algebra}
@@ -76,7 +77,7 @@ definition.
 \par
 
 In summary, and with some abuse of notation, we can see how much more structure
-C*-algebras have as compared to typical vector spaces
+C*-algebras have as compared to typical vector spaces.
 \begin{equation*}
     \text{vector space} \supseteq \text{algebra} \supseteq \text{Banach algebra} \supseteq \text{C*-algebra}
 \end{equation*}
@@ -90,7 +91,7 @@ A \textbf{state} on a C*-algebra \( A \) is a linear functional \( \phi: A \to \
 \end{definition}
 
 
-We require the positive definite condition for $\phi$ to preserve the positive structure
+We require the positive semidefinite condition for $\phi$ to preserve the positive structure
 of $A$. We define the set of all the states on $A$ as the \textbf{state space} $\Phi(A)$. It
 can be shown that $S(A)$ is compact, non-empty, and convex (state spaces are ``nice'').
 There are some types of states that are of particular interest. \todo{rewrite this whole paragraph}
@@ -98,3 +99,26 @@ We say a state $\phi \in S(A)$ is \textbf{pure} if it is an extreme point of $S(
 Note this definition is well-defined because the Krein-Milman theorem guarantess
 the existence of extreme points of $S(A)$. States that are not pure are \textbf{mixed}.
 
+\par
+
+States of course have the typical properties that we'd expect from a linear functional
+but they also admit some other properties that may not be so apparent. 
+
+\begin{definition}
+    The \textbf{kernel} of a state $\phi$ is defined as
+    \begin{equation*}
+        \text{ker}(\phi) = \{a : \phi(a^*a) = 0 \}
+    \end{equation*}
+    for $a \in A$, a C*-algebra. Furthermore, a state $\phi$ on a C*-algebra
+    is \textbf{faithful} if $\phi(a^*a) = 0$ implies $a=0$ for all $a \in A$.
+\end{definition}
+
+This, in a sense, tells us that faithful states ``detect'' non-zero elements. As we will see
+later, a state is faithful iff its GNS representation is injective. States have many other properties of interest, particularly
+\begin{itemize}
+    \item The set of states $S(A)$ is compact in the weak-* topology
+    \item A state is \textbf{tracial} if $\phi(ab) = \phi(ba)$ for all $a,b \in A$
+    \item Pure states correspond to rank-1 projections onto a unit vector $\psi \in H$.
+    Specifically, $\phi(A) = \langle \psi, A\psi \rangle$
+    \item A mixed state is a convex combination of pure states
+\end{itemize}
