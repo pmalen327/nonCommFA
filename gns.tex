@@ -60,7 +60,21 @@ explicitly define the GNS construction.
 
 \subsection{Examples}
 \begin{example}
-GNS construction for \( C([0,1]) \) with a specific state.
+Lets step through a GNS construction for \( C([0,1]) \) with a simple state. One
+can easily verify that $C([0,1])$ is a C*-algebra under pointwise addition, pointwise
+multiplication, and the usual suprememum norm. The involution is typically complex
+conjugation for continuous functions but because we are only considering real-valued
+functions here, we just take the identity involution $f^*=f$. First, lets define a simple state
+on $C([0,1])$. Lets consider the state $\varphi$ which is just a point evaluation,
+say $x_0 \in [0,1]$, specifically, $\varphi(f) = f(x_0)$. So we see every $f \in C([0,1])$
+is a linear functional, we just need to ensure positive definiteness. So we check
+$\varphi(f^*f) = f(x_0)^2 \ge 0$. Thus $\varphi$ as we defined it, is a valid state
+on $C([0,1])$. Now we need to constuct the appropriate pre-Hilbert space $H_\varphi$.
+The elements of $H_\varphi$ will be equivalence classes of functions on $C([0,1])$
+with the inner-product given by pointwise multiplication of point evaluations
+\begin{equation*}
+    \langle f,g \rangle_\varphi = \varphi(g^*f) = g(x_0)f(x_0)
+\end{equation*}
 \end{example}
 \begin{example}
 GNS construction for \( M_2(\mathbb{C}) \).
