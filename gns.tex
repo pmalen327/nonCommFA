@@ -57,6 +57,11 @@ explicitly define the GNS construction.
     for every $a \in A$.
 \end{theorem}
 
+\begin{theorem}
+    A state $\phi$ on a C*-algebra $A$ is faithful if and only if its GNS representation
+    $\pi_\varphi: A \to B(H_\varphi)$ is injective.
+\end{theorem}
+
 
 \subsection{Examples}
 \begin{example}
@@ -78,9 +83,10 @@ with the inner-product given by pointwise multiplication of point evaluations
 We take the topological closure of $H_\varphi$ to turn it into a proper Hilbert space.
 Next, we define a the representation $\pi_\varphi$ of the algebra $C([0,1])$ on
 the Hilbert space $H_\varphi$. So we define the operator $\pi_\varphi (f)$ as
-\begin{equation*}
-    \pi_\varphi (f)\xi_\varphi = f \xi_\varphi
-\end{equation*}
+\begin{align*}
+    \pi_\varphi: C([0,1]) &\to B(\mathbb{C})\\
+    \pi_\varphi (f)\xi_\varphi &\mapsto f \xi_\varphi
+\end{align*}
 for the cyclic vector $\xi_\varphi$. In this example, $\xi_\varphi$ is any function
 that is nonzero when evaluated at $x_0$. For simplicity we can even choose $\xi_\varphi = 1$.
 So when we take $f \in C([0,1])$ and apply the cyclic vector $\xi_\varphi$, we get
@@ -115,5 +121,49 @@ of any C*-algebra will look very similar to this example.
 
 
 \begin{example}
-GNS construction for \( M_2(\mathbb{C}) \).
+The GNS construction for \( M_2(\mathbb{C}) \) is still simple but because we are
+dealing with matrices, it may give a better intuition of what an arbitray GNS construction
+would look like for linear operators. It is easy to see that $M_2(\mathbb{C})$ is a
+C*-algebra under the usual matrix addition and multiplication and with involution
+given by the conjugate transpose. As for states on $M_2(\mathbb{C})$, there are
+a few ``natural'' choices. We will use the trace state
+\begin{equation*}
+    \varphi(A) = \frac{1}{2} \operatorname{Tr}(A)
+\end{equation*}
+Note that the trace state is faithful. Using the trace state $\varphi$, we can
+build the pre-Hilbert space by taking the inner product
+\begin{equation*}
+    \langle A,B \rangle = \varphi(A^*B) = \frac{1}{2}\operatorname{Tr}(A^*B)    
+\end{equation*}
+and finding the quotient of $M_2(\mathbb{C})$ by the kernel of the inner-product.
+Note that because our action is faithful, $\varphi$ has a trivial null space, which
+simplifies the calculations a lot. It is a well known fact that $M_2(\mathbb{C})/\{0\} \cong M_2(\mathbb{C})$.
+Thus the pre-Hilbert space is just $M_2(\mathbb{C})$ with the inner product given
+by the trace state, which is in fact a Hilbert space. This makes things simple because
+we don't need to compute any difficult closures (this can get very cumbersome in general),
+essentially saving us a step. Next, we need to define our representation. In this case
+it is convenient to take the ``trivial'' representation (the reader may start to see a pattern)
+$\pi_\varphi: M_2(\mathbb{C}) \to B(M_2(\mathbb{C}))$
+defined by $\pi_\varphi(A)(B) = AB$ for all $A,B \in M_2(\mathbb{C})$
+(left multiplication by matrices). This is trivial in the fact that it isn't really
+giving us any new information. This representation just says that matrices act on the Hilbert space
+$M_2(\mathbb{C})$ by left multiplication, which is exactly the multiplication operation
+we expect. If the reader picked up on the pattern, it will be no surprise that for the
+cyclic vector, we just take the identity matrix $\xi = I_2$. So in a concrete sense,
+the state representation is
+\begin{equation*}
+    \pi_\varphi (A) \xi = A \xi
+\end{equation*}
+which gives us a natural extension to
+\begin{equation*}
+    \varphi(A) = \langle \pi_\varphi(A )\xi, \xi \rangle = \langle A\xi , \xi \rangle
+\end{equation*}
+which is exactly what we would expect. This example was potentially easier for some
+and more difficult for others. But between the two basic examples, hopefully the 
+importance of the GNS construction is illustrated. In a nutshell, we can think of 
+the GNS construction as a way to express a state on a C*-algebra as an inner
+product in a Hilbert space using a representation of the algebra, and a cyclic
+vector from the Hilbert space.
+
+
 \end{example}

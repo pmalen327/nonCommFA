@@ -13,10 +13,10 @@
 \contentsline {section}{\numberline {4}The Gelfand-Naimark-Segal (GNS) Construction}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Overview of the Construction}{8}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Examples}{9}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Applications and Connections}{10}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Quantum Mechanics}{10}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}CAR and CCR Algebras}{10}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Fock Spaces}{10}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Noncommutative Geometry}{10}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Conclusion and Future Directions}{11}{section.6}%
-\contentsline {section}{\numberline {A}Proofs of Key Results}{12}{appendix.A}%
+\contentsline {section}{\numberline {5}Applications and Connections}{11}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Quantum Mechanics}{11}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}CAR and CCR Algebras}{11}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Fock Spaces}{11}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Noncommutative Geometry}{11}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Conclusion and Future Directions}{12}{section.6}%
+\contentsline {section}{\numberline {A}Proofs of Key Results}{13}{appendix.A}%
