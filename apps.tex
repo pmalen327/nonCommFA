@@ -1,10 +1,73 @@
 \section{Applications and Connections}
 \subsection{Quantum Mechanics}
-Discuss how states correspond to physical states and observables.
+States are a key concept in quantum mechanics. We saw earlier how states on $B(H)$
+assign probability distributions to observables. We also looked at the trace state
+on the algebra $M_2(\mathbb{C})$ and saw how it relates to density matrices. Now,
+we will look at some non-trivial states in quantum mechanics that are of equal
+or greater importance. We will start with some background on some important operators,
+then see the C*-algebras they generate and ultimately work through the GNS construction
+of the Fock spaces.
+\subsubsection{Weyl and Majorna Operators}
+First we introduce the bosonic creation $a^\dagger(f)$ and annihilation $a(f)$ operators.
+If these operators satisfy the \textbf{canonical commutation relations}:
+\begin{equation}
+    [ a(f), a^\dagger(g) ] = \langle f,g \rangle
+\end{equation}
+Then we can define the \textbf{Weyl operator}:
+\begin{equation}
+    W(f) = e^{i(a(f)+a^\dagger(f))}
+\end{equation}
+Where $f$ and $g$ are functions from a hilbert space $H$. Weyl operators satisfy
+the Weyl commutation relations given by:
+\begin{equation}
+    W(f) W(g) = e^{-\frac{i}{2} \operatorname{Im} \langle f, g \rangle} W(f+g)
+\end{equation}
+Weyl operators satisfy a lot of convenient properties but it is sufficient to note they
+are unitary operators, specificially:
+\begin{align*}
+    W(f)^* &= W(-f)\\
+    W(0) &= 1
+\end{align*}
+From a physics perspective, Weyl generate phase space transformations. They also
+describe coherent states and quantum optical transformations. These are beyond the 
+scope of this survey but it is important to note that Weyl operators play a key
+role in physics.\newline
+
+\noindent We saw that Weyl operators satisfy the canonical commutation relations and thus
+the question arises; are there anticommutation relations and further, corresponding
+operators? First, for the creation and annihilation operators, we let $c(f)$ and $c^\dagger(f)$
+be the fermionic creation and annihilation operators respectively. We define the
+\textbf{canonical anticommutation relations} under the anticommutor operator $\{A,B\} = AB + BA$:
+\begin{align}
+    \{ c(f), c^\dagger (g)\} &= \langle f,g \rangle\\
+    \{ c(f), c(g)\} &=0\\
+    \{ c^\dagger(f), c^\dagger(g)\} &= 0
+\end{align}
+Given these relations, we can define the anticommutative analogue to Weyl operators.
+The \textbf{unitary fermionic coherent operator} is defined as:
+\begin{equation}
+    U(f) = e^{c^\dagger(f) - c(f)}
+\end{equation}
+However, the exponent is usually dropped and the unitary fermionic coherent operator
+becomes the \textbf{Majorna operator}:
+\begin{equation}
+    \gamma(f) = c(f) + c^\dagger(f)
+\end{equation}
+Majorna operators satisfy the \textbf{Clifford algebra relations}:
+\begin{equation}
+    \{ \gamma(f), \gamma(g) \} = 2 \operatorname{Re} \langle f, g \rangle
+\end{equation}
+Majorna operators are used in fermionic systems, particularly in topological phases
+of matter and quantum computing.
 
 \subsubsection{CAR and CCR Algebras}
+It might not be obvious how Weyl and Majorna operators show up in the theory of C*-algebras
+but now we demonstrate how they generate two of the most important algebras in
+physics. Given a Hilbert space $H$, the Weyl operators on $H$ generate the
+\textbf{Canonical Commutation Relations algebra (CCR)}. Under the Weyl commutation relations,
+the CCR algebra is a C*-algebra.
 
-\subsubsection{Fock Spaces}
+\subsubsection{Fock Spaces as Representations}
 Fermionic and Bosonic
 \subsection{Noncommutative Geometry}
 Briefly describe the role of states in measuring noncommutative spaces.
