@@ -10,15 +10,17 @@ of the Fock spaces.
 \subsubsection{Weyl and Majorna Operators}
 First we introduce the bosonic creation $a^\dagger(f)$ and annihilation $a(f)$ operators.
 If these operators satisfy the \textbf{canonical commutation relations}:
-\begin{equation}
-    [ a(f), a^\dagger(g) ] = \langle f,g \rangle
-\end{equation}
-Then we can define the \textbf{Weyl operator}:
+\begin{align}
+    [ a(f), a^\dagger(g) ] &= \langle f,g \rangle\\
+    [a(f), a(g)] &= 0\\
+    [a^\dagger(f), a^\dagger(g)] &= 0
+\end{align}
+Where $[- , -]$ is the Lie bracket. Then we can define the \textbf{Weyl operator}:
 \begin{equation}
     W(f) = e^{i(a(f)+a^\dagger(f))}
 \end{equation}
 Where $f$ and $g$ are functions from a hilbert space $H$. Weyl operators satisfy
-the Weyl commutation relations given by:
+the \textbf{Weyl commutation relations} given by:
 \begin{equation}
     W(f) W(g) = e^{-\frac{i}{2} \operatorname{Im} \langle f, g \rangle} W(f+g)
 \end{equation}
@@ -37,7 +39,8 @@ role in physics.\newline
 the question arises; are there anticommutation relations and further, corresponding
 operators? First, for the creation and annihilation operators, we let $c(f)$ and $c^\dagger(f)$
 be the fermionic creation and annihilation operators respectively. We define the
-\textbf{canonical anticommutation relations} under the anticommutor operator $\{A,B\} = AB + BA$:
+\textbf{canonical anticommutation relations} under the anticommutor operator $\{A,B\} = AB + BA$
+(sometimes called the Jordan bracket, the positive analogue of the Lie bracket):
 \begin{align}
     \{ c(f), c^\dagger (g)\} &= \langle f,g \rangle\\
     \{ c(f), c(g)\} &=0\\
@@ -48,7 +51,7 @@ The \textbf{unitary fermionic coherent operator} is defined as:
 \begin{equation}
     U(f) = e^{c^\dagger(f) - c(f)}
 \end{equation}
-However, the exponent is usually dropped and the unitary fermionic coherent operator
+However, the exponential is usually dropped and the unitary fermionic coherent operator
 becomes the \textbf{Majorna operator}:
 \begin{equation}
     \gamma(f) = c(f) + c^\dagger(f)
@@ -60,7 +63,7 @@ Majorna operators satisfy the \textbf{Clifford algebra relations}:
 Majorna operators are used in fermionic systems, particularly in topological phases
 of matter and quantum computing.
 
-\subsubsection{CAR and CCR Algebras}
+\subsubsection{CCR and CAR Algebras}
 It might not be obvious how Weyl and Majorna operators show up in the theory of C*-algebras
 but now we demonstrate how they generate two of the most important algebras in
 physics. Given a Hilbert space $H$, the Weyl operators on $H$ generate the

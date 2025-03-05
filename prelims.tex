@@ -12,13 +12,12 @@
 \end{definition}
 We say $A$ is \textbf{unital} if it has an identity element $e \in A$ such that
 $ex = xe = x$ for all $x \in A$. We will assume every algebra is unital unless stated
-otherwise. Further, $A$ is \textbf{abelian} or (\textbf{commutative})
+otherwise. Further, $A$ is \textbf{commutative} or (\textbf{abelian})
 if $xy=yx$ for all $x,y \in A$.
 
 \subsection{Definition of a Banach Algebra}
 \begin{definition}
-    A \textbf{Banach algebra} is an algebra $A$ which is norm complete, thus a Banach
-    space, such that
+    A \textbf{Banach algebra} $A$ is simultaneously an algebra and a Banach space satisfying
     \begin{equation*}
         \| xy \| \le \|x\| \|y\| \quad \forall x,y \in A
     \end{equation*}
@@ -27,11 +26,11 @@ If $A$ is unital then we assume $\| e \| = 1$. Further, we usualy write $1:=e$ f
 the unital element. We won't work much with Banach algebras exclusively but rather
 to motivate the definition of a C*-algebra. However, it is important to note an example.
 \begin{example}
-    Let $f,g \in L^1(\mathbb{R})$ and define the multiplication operation as the convolution
+    Let $f,g \in L^1(\mathbb{R})$ and define the algebra's operation as the convolution
     $f * g \in L^1 (\mathbb{R})$ by
-    \begin{equation*}
+    \begin{equation}
         (f * g)(t) := \int_{\mathbb{R}} f(t-s)g(s)ds
-    \end{equation*}
+    \end{equation}
     Under the convolution, $L^1 (\mathbb{R})$ is a commutative Banach algebra but
     it is not unital.
 \end{example}
@@ -45,10 +44,13 @@ A \textbf{C*-algebra} is a Banach algebra \( A \) equipped with an involution \(
 \|a^*a\| = \|a\|^2 \quad \text{for all } a \in A.
 \]
 \end{definition}
-Note that the involution operator is unique. For some concrete examples and nonexamples, consider a compact Hausdorff space $X$.
-We define $C(X)$ to be all continuous functions $f: X \to \mathbb{C}$. It is crucial
-that $X$ be compact for our purposes. The involution on $C(X)$ is defined as complex
-conjugation denoted $f^* = \overline{f}$. Lets look at some simple examples.
+Note that the involution operator is unique. Most C*-algebras are endowed with the
+opertor norm-induced topology and we will always assume this to be the case unless
+stated otherwise. For some concrete examples and nonexamples,
+consider a compact Hausdorff space $X$. We define $C(X)$ to be all continuous functions
+$f: X \to \mathbb{C}$. It is crucial that $X$ be compact. The involution on $C(X)$
+is defined as complex conjugation denoted $f^* = \overline{f}$. Lets look at some
+simple examples.
 \begin{example}
     Let $X = [0,1]$, then $C(X)$ is a C*-algebra.
 \end{example}
@@ -66,13 +68,36 @@ conjugation denoted $f^* = \overline{f}$. Lets look at some simple examples.
 \end{example}
 
 These are very basic concrete examples of subsets of $\mathbb{C}$, but we also want
-to consider some much more important examples for our purposes. One that shows up a
-lot in physics is the C*-algebra of complex-valued $n \times n$ matrices, denoted $M_n(\mathbb{C})$.
-Another C*-algebra of particular interest is the bounded linear operators from a Hilbert
-space onto itself, we denote this $B(H)$ for a Hilbert space $H$. One may also explore
-the C*-algebras of continuous compactly supported functions and continuous functions
-vanishing at infinity. Should these arise in any examples we will give a rigorous
+to consider some much more important examples for our purposes. Arguably the most important
+example is the C*-algebra $C_0(X)$, the C*-algebra of continuous functions that vanish
+at infinity over a locally compact Hausdorff space $X$. This leads us to one of the most
+important and useful theorems in the theory of operator and C*-algebras. First, a quick
 definition.
+\begin{definition}
+    For a C*-algebra $A$, a \textbf{character} is a nonzero homomorphism
+    \begin{equation*}
+        \Phi:A\to \mathbb{C}
+    \end{equation*}
+\end{definition}
+
+\begin{theorem}[Gelfand Representation Theorem]
+    Every commutative unital C*-algebra  $A$  is isometrically isomorphic to  $C_0(X)$,
+    the algebra of continuous functions on some compact Hausdorff space $X$, where
+    $X$ is the space of characters.
+\end{theorem}
+\vspace{3mm}
+The utility of the Gelfand Representation Theorem is quite apparent. This allows
+us to view all commutative C*-algebras as isomorphic. Specifically, for any commutative
+unital C*-algebra $A$, there exists an isometric isomorphism
+\begin{equation*}
+    \varphi: A \to C_0(X)
+\end{equation*}
+The importance of this theorem cannot be overstated. This property of unital commutative
+C*-algebras is often referred to as \textbf{Gelfand duality}.
+A valuable C*-algebra that shows up a lot in physics is the C*-algebra of complex-valued $n \times n$
+matrices, denoted $M_n(\mathbb{C})$. Another C*-algebra of particular interest is
+the bounded linear operators from a Hilbert space onto itself, we denote this $B(H)$
+for a Hilbert space $H$.
 
 \par
 
@@ -86,7 +111,7 @@ C*-algebras have as compared to typical vector spaces.
 \begin{definition}
 A \textbf{state} on a C*-algebra \( A \) is a linear functional \( \phi: A \to \mathbb{C} \) such that:
 \[
-\phi(a^*a) \geq 0 \quad \text{for all } a \in A, \quad \text{and } \phi(1) = 1.
+\phi(a^*a) \geq 0 \ \  \text{for all } a \in A, \ \  \text{and } \phi(1) = 1.
 \]
 \end{definition}
 
@@ -94,10 +119,10 @@ A \textbf{state} on a C*-algebra \( A \) is a linear functional \( \phi: A \to \
 We require the positive semidefinite condition for $\phi$ to preserve the positive structure
 of $A$. We define the set of all the states on $A$ as the \textbf{state space} $S(A)$. It
 can be shown that $S(A)$ is compact, non-empty, and convex (state spaces are ``nice'').
-There are some types of states that are of particular interest. \todo{rewrite this whole paragraph}
+There are certain states that are of particular interest. 
 We say a state $\phi \in S(A)$ is \textbf{pure} if it is an extreme point of $S(A)$.
-Note this definition is well-defined because the Krein-Milman theorem guarantess
-the existence of extreme points of $S(A)$. States that are not pure are \textbf{mixed}.
+Note this is well-defined because the Krein-Milman theorem guarantess the existence
+of extreme points of $S(A)$. States that are not pure are \textbf{mixed}.
 
 \par
 
@@ -112,9 +137,10 @@ but they also admit some other properties that may not be so apparent.
     for $a \in A$, a C*-algebra. Furthermore, a state $\phi$ on a C*-algebra
     is \textbf{faithful} if $\phi(a^*a) = 0$ implies $a=0$ for all $a \in A$.
 \end{definition}
-
-This, in a sense, tells us that faithful states ``detect'' non-zero elements. As we will see
-later, a state is faithful iff its GNS representation is injective. States have many other properties of interest, particularly
+It is very important to note that this is different than the kernel of a general
+linear functional. In a sense, this tells us that faithful states ``detect'' non-zero
+elements. As we will see later, a state is faithful if and only if its GNS representation
+is injective. States have many other properties of interest, particularly
 \begin{itemize}
     \item The state space $S(A)$ is compact in the weak-* topology
     \item A state is \textbf{tracial} if $\phi(ab) = \phi(ba)$ for all $a,b \in A$
